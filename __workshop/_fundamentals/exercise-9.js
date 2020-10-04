@@ -10,8 +10,37 @@
 
 const wrapAfter40Chars = (paragraph) => {
   // Your code here
+  // If paragraph length is equal to more than 40 chars, return
+  if (paragraph.length <= 40) {
+    return paragraph;
+  } 
+  let stringWithWhiteSpace = "";
+  let paragraphAsArray = paragraph.split("")//splitting paragraph every space
+
+  for (let i = 0; i < paragraphAsArray.length; i++) {
+    if (i != 0 && i % 40 == 0) {
+      stringWithWhiteSpace += "\n";
+    } else {
+      stringWithWhiteSpace += paragraphAsArray[i];
+    }
+  }
+
+  let newStringWithoutWhiteSpace = "";
+  let sentences = stringWithWhiteSpace.split("\n");
+
+  for (let i = 0; i < sentences.length; i++) {
+    newStringWithoutWhiteSpace += sentences[i].trim();
+
+    if (i != sentences.length - 1) {
+      newStringWithoutWhiteSpace += "\n";
+    }
+  }
+  return newStringWithoutWhiteSpace;
 };
 
+console.log(wrapAfter40Chars(
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+))
 // Part 2 - Test
 // --------------
 // Test your function.
@@ -20,3 +49,7 @@ const wrapAfter40Chars = (paragraph) => {
 
 // We need to export the function in order for our unit test to have access to it.
 module.exports = wrapAfter40Chars;
+
+//split 
+//lopp
+//result =+

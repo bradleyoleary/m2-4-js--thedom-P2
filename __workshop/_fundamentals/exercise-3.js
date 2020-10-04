@@ -14,9 +14,21 @@
 //
 // - If the second parameter is not an object, return the original array element
 
-const insert = (arr, obj) => {
-  // Insert missing solution please
+const insert = (array, object) => {
+  
+  if (obj === null) { return arr; }
+
+  let newArray = arr.slice(0);
+
+  for (let index = 0; index < newArray.length; index++){
+    let currentObject = newArray[index];
+    newArray[index] = {...currentObject, ...obj};
+  }
+  return newArray;
 };
+
+console.log (insert([{ name: "Bob" }, { name: "Josie" }], { isAvailable: false })
+)
 
 // Part 2 - Test
 // --------------

@@ -15,6 +15,15 @@
 
 const addValues = (arr, obj) => {
   // Insert missing solution please
+  if (obj === null) { return arr; }
+
+  let newArray = arr.slice(0);
+  for (let index = 0; index <newArray.length; index++) {
+  let currentObject = newArray[index];
+  newArray[index] = {...currentObject, ...obj};
+  }
+
+  return newArray;
 };
 
 // Part 2 - Test

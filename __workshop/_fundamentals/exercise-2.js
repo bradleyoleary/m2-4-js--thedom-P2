@@ -10,7 +10,21 @@
 
 const redacted = (arr) => {
   // Insert missing solution please
+  // Object.keys(arr).forEach(function(key){ arr[key] = "redacted"});
+  let newArr = []
+
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === 'string') {
+      newArr[i] = "redacted" 
+    }
+    else {
+      newArr[i] = arr[i]
+    }
+  }
+  return newArr;
 };
+
+console.log(redacted(["bacon", false, 42]))
 
 // Part 2 - Test
 // --------------

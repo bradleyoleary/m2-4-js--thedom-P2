@@ -12,6 +12,15 @@
 
 const count = (arr, key) => {
   // Insert missing solution please
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+      if (arr[i][key] != null && isNaN(arr[i][key]) == false) {
+        console.log(arr[i][key])
+        sum += arr[i][key]
+      }
+  }
+  return sum;
 };
 
 // Part 2 - Test

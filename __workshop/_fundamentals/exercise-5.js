@@ -9,7 +9,22 @@
 
 const addNumbers = (...nums) => {
   // Insert missing solution please
+  let arr = [...nums];
+
+  if (arr.length == 0) { 
+    return undefined;}
+    
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (isNaN(arr[i]) == false) {
+      sum += (arr[i] ** 2)
+    }
+  }
+  return sum;
 };
+
+console.log (addNumbers(1, 2, 3, 4, 5))
 
 // Part 2 - Test
 // --------------
